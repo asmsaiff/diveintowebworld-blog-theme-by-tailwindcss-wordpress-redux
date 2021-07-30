@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php bloginfo( 'title' ); ?></title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&family=Parisienne&family=Philosopher:ital@0;1&display=swap" rel="stylesheet"> 
+
     <?php wp_head(); ?>
 </head>
 <body class="drawer drawer--right">

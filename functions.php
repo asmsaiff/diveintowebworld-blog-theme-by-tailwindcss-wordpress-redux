@@ -16,7 +16,6 @@
 
     function diveintowebworld_assets_enqueue() {
         // Style Enqueue
-        wp_enqueue_style('google-font', '//fonts.googleapis.com/css2?family=Nunito:wght@200;400&family=Parisienne&family=Philosopher:ital@0;1&display=swap');
         wp_enqueue_style('tailwind-css', get_template_directory_uri().'/assets/css/style.css');
         wp_enqueue_style('custom-css', get_template_directory_uri().'/assets/css/custom.css');
         wp_enqueue_style('theme-style', get_stylesheet_uri());
