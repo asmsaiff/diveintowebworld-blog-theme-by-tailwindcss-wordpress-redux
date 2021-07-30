@@ -52,15 +52,9 @@
         </div>
 
         <!-- Pagination -->
-        <ul class="flex mt-20 w-max mx-auto">
-            <li class="bg-gray-100 hover:bg-blue-600 hover:text-white transition-all duration-200 cursor-pointer w-8 h-8 rounded-full flex mr-3"><i class="fas fa-arrow-left self-center text-center w-full text-sm"></i></li>
-            <li class="self-center px-2 cursor-pointer hover:text-white rounded-sm hover:bg-blue-600 transition-all duration-200">1</li>
-            <li class="self-center px-2 cursor-pointer hover:text-white rounded-sm hover:bg-blue-600 transition-all duration-200">2</li>
-            <li class="self-center px-2 cursor-pointer hover:text-white rounded-sm hover:bg-blue-600 transition-all duration-200">3</li>
-            <li class="self-center px-2 cursor-pointer hover:text-white rounded-sm hover:bg-blue-600 transition-all duration-200">4</li>
-            <li class="self-center px-2 cursor-pointer hover:text-white rounded-sm hover:bg-blue-600 transition-all duration-200">5</li>
-            <li class="bg-gray-100 hover:bg-blue-600 hover:text-white transition-all duration-200 cursor-pointer w-8 h-8 rounded-full flex ml-3"><i class="fas fa-arrow-right self-center text-center w-full text-sm"></i></li>
-        </ul>
+        <div class="flex mt-20 w-max mx-auto">
+            <?php diveintowebworld_post_pagination(); ?>
+        </div>
     </section>
 
     

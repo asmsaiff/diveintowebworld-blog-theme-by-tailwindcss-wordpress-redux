@@ -6,7 +6,7 @@
 
     <!-- Main Content Body -->
     <main class="container mx-auto">
-        <section class="md:pt-16 pb-8 grid grid-cols-3 gap-12 px-4 sm:px-0">
+        <section class="md:mt-6 pb-8 grid grid-cols-3 gap-12 px-4 sm:px-0">
             <!-- Guidelines & Roadmaps -->
             <?php get_template_part('template-parts/post-sections/guideline-roadmaps'); ?>
             

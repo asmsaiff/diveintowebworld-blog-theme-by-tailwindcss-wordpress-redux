@@ -81,3 +81,23 @@
         ));
     }
     add_action('widgets_init', 'diveintowebworld_widgets_register');
+
+
+    // Post Pagination
+    function diveintowebworld_post_pagination() {
+        global $wp_query;
+        $pagination = paginate_links(array(
+            'current'   => max(1, get_query_var('paged')),
+            'total'     =>  $wp_query->max_num_pages,
+            'prev_text' =>  '<i class="fas fa-arrow-left self-center text-center w-full text-sm"></i>',
+            'next_text' =>  '<i class="fas fa-arrow-right self-center text-center w-full text-sm"></i>',
+        ));
+
+        $pagination = str_replace('<a class="page-numbers', '<a class="mx-1 page-numbers self-center px-2 cursor-pointer hover:text-white rounded-sm hover:bg-blue-600 transition-all duration-200', $pagination);
+        $pagination = str_replace('<span aria-current="page" class="page-numbers current', '<p class="self-center px-2 cursor-pointer text-white rounded-sm bg-blue-600 transition-all duration-200', $pagination);
+        $pagination = str_replace('</span>', '</p>', $pagination);
+        $pagination = str_replace('prev page-numbers', 'bg-gray-100 hover:bg-blue-600 hover:text-white transition-all duration-200 cursor-pointer w-8 h-8 rounded-full flex mr-3', $pagination);
+        $pagination = str_replace('next page-numbers', 'bg-gray-100 hover:bg-blue-600 hover:text-white transition-all duration-200 cursor-pointer w-8 h-8 rounded-full flex ml-3', $pagination);
+
+        echo $pagination;
+    }
