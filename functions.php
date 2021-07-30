@@ -68,3 +68,16 @@
         return substr($e,0,200);
     }
     add_filter('get_the_excerpt','excerpt_char_limit');
+
+    function diveintowebworld_widgets_register() {
+        register_sidebar(array(
+            'id'            =>  'diveintowebworld_popular_category_sidebar',
+            'name'          =>  __('Popular Category', 'diveintowebworld'),
+            'description'   =>  __('Popular Categories with post count', 'diveintowebworld'),
+            'before_widget' =>  '',
+            'after_widget'  =>  '',
+            'before_title'  =>  '',
+            'after_title'   =>  '',
+        ));
+    }
+    add_action('widgets_init', 'diveintowebworld_widgets_register');
