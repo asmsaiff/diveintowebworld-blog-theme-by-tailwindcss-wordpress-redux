@@ -23,10 +23,6 @@ nav a:hover::after {
     transition: width .3s;
 }
 
-.page-featured-image {
-    background-image: url('https://preview.colorlib.com/theme/magdesign/images/ximg_2.jpg.pagespeed.ic.fbbBEgB1Q6.webp')
-}
-
 .fas.fa-angle-right.clr-gry.slick-arrow {
     position: absolute;
     top: 50%;

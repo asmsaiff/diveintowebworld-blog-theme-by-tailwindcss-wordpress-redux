@@ -33,3 +33,38 @@
         wp_enqueue_script('alpine-js', '//cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js', null, VERSION, true);
     }
     add_action('wp_enqueue_scripts', 'diveintowebworld_assets_enqueue');
+
+
+    // Show Post Counter Function
+
+    function diveintowebworld_get_post_view() {
+        $count = get_post_meta( get_the_ID(), 'post_views_count', true );
+        return "$count Views";
+    }
+    function diveintowebworld_set_post_view() {
+        $key = 'post_views_count';
+        $post_id = get_the_ID();
+        $count = (int) get_post_meta( $post_id, $key, true );
+        $count++;
+        update_post_meta( $post_id, $key, $count );
+    }
+    function diveintowebworld_posts_column_views( $columns ) {
+        $columns['post_views'] = 'Views';
+        return $columns;
+    }
+    function diveintowebworld_posts_custom_column_views( $column ) {
+        if ( $column === 'post_views') {
+            echo diveintowebworld_get_post_view();
+        }
+    }
+    add_filter( 'manage_posts_columns', 'diveintowebworld_posts_column_views' );
+    add_action( 'manage_posts_custom_column', 'diveintowebworld_posts_custom_column_views' );
+
+    /** The Excerpt Character Limit Function
+     *  Limit except length to 125 characters.
+     *  tn limited excerpt length by number of characters
+    **/ 
+    function excerpt_char_limit($e){
+        return substr($e,0,200);
+    }
+    add_filter('get_the_excerpt','excerpt_char_limit');

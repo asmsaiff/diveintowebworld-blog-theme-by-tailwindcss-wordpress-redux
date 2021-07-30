@@ -1,7 +1,6 @@
 <!-- Featured Posts -->
 <div class="container mx-auto">
         <section class="pb-8 grid grid-cols-2 md:gap-4">
-
             <?php
                 $diveintowebworld_latest_posts = new WP_Query(array(
                     'post_type'             =>  'post',

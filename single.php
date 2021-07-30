@@ -16,7 +16,7 @@
                 <div class="flex mt-3 divide-x divide-gray-300">
                     <span class="flex pr-2 text-sm">
                         <i class="invisible sm:visible -ml-4 sm:-ml-0 far fa-user-circle self-center mr-1"></i>
-                        <h6><?php the_author(); ?></h6>
+                        <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ); ?>"><?php the_author(); ?></a>
                     </span>
                     <span class="px-2 text-sm">
                         <i class="invisible sm:visible -ml-4 sm:-ml-0 far fa-calendar-alt mr-1"></i>
@@ -24,11 +24,12 @@
                     </span>
                     <span class="px-2 text-sm">
                         <i class="invisible sm:visible -ml-4 sm:-ml-0 fas fa-link self-center mr-1"></i>
-                        <a href=""><?php single_cat_title(); ?></a>
+                        <a href=""><?php get_the_category(); ?></a>
                     </span>
                     <span class="px-2 text-sm">
+                        <?php diveintowebworld_set_post_view(); ?>
                         <i class="invisible sm:visible -ml-4 sm:-ml-0 fab fa-cloudscale mr-1"></i>
-                        <a href="">20 Views</a>
+                        <a href=""><?= diveintowebworld_get_post_view(); ?></a>
                     </span>
                 </div>
             </div>
@@ -62,160 +63,41 @@
                         the_post_thumbnail('large', array('class'=>'mb-10 rounded'));
                     }
 
-                    the_content(); ?>
+                    the_content();
+                ?>
 
                 <div class="mt-8 border-t py-8 rounded-sm">
                     <div class="grid grid-cols-1 md:grid-cols-2 md:divide-x divide-y sm:divide-y-0">
-                        <a href="#!" class="pb-6 sm:pb-0">
+                        <?php $diveintowebworld_prev_post = get_previous_post(); ?>
+                        <a href="<?php echo get_the_permalink( $diveintowebworld_prev_post ); ?>" class="pb-6 sm:pb-0">
                             <div class="flex uppercase prev_next_post_label text-gray-700">
                                 <i class="fas fa-caret-left self-center mr-1 leading-3"></i>
-                                <span>previous post</span>
+                                <span><?php _e('previous post', 'diveintowebworld') ?></span>
                             </div>
-                            <h4>Lorem ipsum dolor sit amet.</h4>
+                            <h4><?php echo get_the_title( $diveintowebworld_prev_post ); ?></h4>
                         </a>
         
-                        <a href="#!" class="text-right pt-6 sm:pt-0">
+                        <?php $diveintowebworld_next_post = get_next_post(); ?>
+                        <a href="<?php echo get_the_permalink( $diveintowebworld_next_post ); ?>" class="text-right pt-6 sm:pt-0">
                             <div class="inline-block">
                                 <div class="flex uppercase prev_next_post_label text-gray-700">
-                                    <span>next post</span>
+                                    <span><?php _e('next post', 'diveintowebworld') ?></span>
                                     <i class="fas fa-caret-right self-center ml-1 leading-3"></i>
                                 </div>
                             </div>
-                            <h4>Lorem ipsum dolor sit amet.</h4>
+                            <h4><?php echo get_the_title( $diveintowebworld_next_post ); ?></h4>
                         </a>
                     </div>
                 </div>
         
                 <div class="border-t py-8 rounded-sm">
-                    <h1 class="text-gray-600">You can't comment right now in this post.</h1>
+                    <h1 class="text-gray-600"><?php _e("You can't comment right now in this post.", "diveintowebworld"); ?></h1>
                 </div>
             </div>
 
             <div class="col-span-5 sm:col-span-9 xl:col-span-3">
                 <div class="top-32 sticky">
-                    <h2 class="section-title text-2xl font-semibold pb-1">Related Posts</h2>
-                    <hr>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 gap-4 mt-2">
-                        <div class="flex flex-col xl:flex-row border-b sm:border-none pb-4 sm:pb-0 w-full">
-                            <img src="https://preview.colorlib.com/theme/magdesign/images/ximg_4.jpg.pagespeed.ic.2DwdgZu3vw.webp" alt="" class="rounded-lg w-40 lg:w-24 h-auto self-center hidden xl:block xl:mr-3">
-                            
-                            <div>
-                                <div class="flex space-x-4">
-                                    <div class="flex text-sm font-semibold space-x-2">
-                                        <h6 class="font-thin">Business, Travel</h6>
-                                        <span>—</span>
-                                        <p class="font-thin text-gray-500">7th July, 2021</p>
-                                    </div>
-                                </div>
-
-                                <h2 class="py-1 leading-5">Your most unhappy customers are your greatest source of learning.</h2>
-
-                                <p class="text-sm block xl:hidden">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi molestias debitis nam facere modi doloremque nostrum recusandae excepturi saepe eaque. Nobis accusantium quasi hic voluptatem!
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex flex-col xl:flex-row border-b sm:border-none pb-4 sm:pb-0">
-                            <img src="https://preview.colorlib.com/theme/magdesign/images/ximg_4.jpg.pagespeed.ic.2DwdgZu3vw.webp" alt="" class="rounded-lg w-40 lg:w-24 h-auto self-center hidden xl:block xl:mr-3">
-                            
-                            <div>
-                                <div class="flex space-x-4">
-                                    <div class="flex text-sm font-semibold space-x-2">
-                                        <h6 class="font-thin">Business, Travel</h6>
-                                        <span>—</span>
-                                        <p class="font-thin text-gray-500">7th July, 2021</p>
-                                    </div>
-                                </div>
-
-                                <h2 class="py-1 leading-5">Your most unhappy customers are your greatest source of learning.</h2>
-
-                                <p class="text-sm block xl:hidden">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi molestias debitis nam facere modi doloremque nostrum recusandae excepturi saepe eaque. Nobis accusantium quasi hic voluptatem!
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col xl:flex-row border-b sm:border-none pb-4 sm:pb-0">
-                            <img src="https://preview.colorlib.com/theme/magdesign/images/ximg_4.jpg.pagespeed.ic.2DwdgZu3vw.webp" alt="" class="rounded-lg w-40 lg:w-24 h-auto self-center hidden xl:block xl:mr-3">
-                            
-                            <div>
-                                <div class="flex space-x-4">
-                                    <div class="flex text-sm font-semibold space-x-2">
-                                        <h6 class="font-thin">Business, Travel</h6>
-                                        <span>—</span>
-                                        <p class="font-thin text-gray-500">7th July, 2021</p>
-                                    </div>
-                                </div>
-
-                                <h2 class="py-1 leading-5">Your most unhappy customers are your greatest source of learning.</h2>
-
-                                <p class="text-sm block xl:hidden">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi molestias debitis nam facere modi doloremque nostrum recusandae excepturi saepe eaque. Nobis accusantium quasi hic voluptatem!
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col xl:flex-row border-b sm:border-none pb-4 sm:pb-0">
-                            <img src="https://preview.colorlib.com/theme/magdesign/images/ximg_4.jpg.pagespeed.ic.2DwdgZu3vw.webp" alt="" class="rounded-lg w-40 lg:w-24 h-auto self-center hidden xl:block xl:mr-3">
-                            
-                            <div>
-                                <div class="flex space-x-4">
-                                    <div class="flex text-sm font-semibold space-x-2">
-                                        <h6 class="font-thin">Business, Travel</h6>
-                                        <span>—</span>
-                                        <p class="font-thin text-gray-500">7th July, 2021</p>
-                                    </div>
-                                </div>
-
-                                <h2 class="py-1 leading-5">Your most unhappy customers are your greatest source of learning.</h2>
-
-                                <p class="text-sm block xl:hidden">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi molestias debitis nam facere modi doloremque nostrum recusandae excepturi saepe eaque. Nobis accusantium quasi hic voluptatem!
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col xl:flex-row border-b sm:border-none pb-4 sm:pb-0">
-                            <img src="https://preview.colorlib.com/theme/magdesign/images/ximg_4.jpg.pagespeed.ic.2DwdgZu3vw.webp" alt="" class="rounded-lg w-40 lg:w-24 h-auto self-center hidden xl:block xl:mr-3">
-                            
-                            <div>
-                                <div class="flex space-x-4">
-                                    <div class="flex text-sm font-semibold space-x-2">
-                                        <h6 class="font-thin">Business, Travel</h6>
-                                        <span>—</span>
-                                        <p class="font-thin text-gray-500">7th July, 2021</p>
-                                    </div>
-                                </div>
-
-                                <h2 class="py-1 leading-5">Your most unhappy customers are your greatest source of learning.</h2>
-
-                                <p class="text-sm block xl:hidden">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi molestias debitis nam facere modi doloremque nostrum recusandae excepturi saepe eaque. Nobis accusantium quasi hic voluptatem!
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col xl:flex-row border-b sm:border-none pb-4 sm:pb-0">
-                            <img src="https://preview.colorlib.com/theme/magdesign/images/ximg_4.jpg.pagespeed.ic.2DwdgZu3vw.webp" alt="" class="rounded-lg w-40 lg:w-24 h-auto self-center hidden xl:block xl:mr-3">
-                            
-                            <div>
-                                <div class="flex space-x-4">
-                                    <div class="flex text-sm font-semibold space-x-2">
-                                        <h6 class="font-thin">Business, Travel</h6>
-                                        <span>—</span>
-                                        <p class="font-thin text-gray-500">7th July, 2021</p>
-                                    </div>
-                                </div>
-
-                                <h2 class="py-1 leading-5">Your most unhappy customers are your greatest source of learning.</h2>
-
-                                <p class="text-sm block xl:hidden">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi molestias debitis nam facere modi doloremque nostrum recusandae excepturi saepe eaque. Nobis accusantium quasi hic voluptatem!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php get_template_part('template-parts/post-sections/single-page-related-post'); ?>
 
                     <h2 class="section-title text-2xl font-semibold pb-1 mt-6">Popular Categories</h2>
                     <hr class="mb-6">

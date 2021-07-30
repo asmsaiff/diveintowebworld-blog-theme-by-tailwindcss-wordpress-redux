@@ -4,8 +4,8 @@
 
     <!-- Category Post Section -->
     <section class="container mx-auto sm:pt-16 lg:pt-0 pb-8 gap-12 px-4 sm:px-0 mt-12">
-        <!-- <h2 class="section-title text-2xl font-semibold pb-1">You searched for - Category</h2>
-        <hr> -->
+        <h2 class="section-title text-2xl font-semibold pb-1">You searched for - <?php echo single_cat_title(); ?></h2>
+        <hr>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-3 mb-6">
             <?php
                 if(have_posts()) :
@@ -36,10 +36,10 @@
                 </p>
 
                 <div class="flex space-x-2">
-                    <img src="<?php echo get_avatar_url( get_the_author_meta( "ID" ) ); ?>" alt="" class="rounded-full w-10 h-10">
+                    <img src="https://preview.colorlib.com/theme/magdesign/images/xperson_1.jpg.pagespeed.ic.Zebptmx_f8.webp" alt="" class="rounded-full w-10 h-10">
 
                     <div>
-                        <h4 class="font-semibold"><?php the_author(); ?></h4>
+                        <h4 class="font-semibold">John Doe</h4>
                         <p class="text-sm text-gray-500">CEO and Founder</p>
                     </div>
                 </div>
