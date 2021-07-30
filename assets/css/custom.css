@@ -23,9 +23,6 @@ nav a:hover::after {
     transition: width .3s;
 }
 
-.featured-image {
-    background-image: url('https://preview.colorlib.com/theme/magdesign/images/ximg_2.jpg.pagespeed.ic.fbbBEgB1Q6.webp');
-}
 .page-featured-image {
     background-image: url('https://preview.colorlib.com/theme/magdesign/images/ximg_2.jpg.pagespeed.ic.fbbBEgB1Q6.webp')
 }
