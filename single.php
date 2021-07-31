@@ -90,7 +90,9 @@
                     </div>
                 </div>
 				
-                <h1 class="brand after-hr relative text-xl mb-6">Meet the Author</h1>
+                <h1 class="brand after-hr relative text-xl mb-6">
+                    <?php _e('Meet the Author', 'diveintowebworld'); ?>
+                </h1>
 				<figure class="sm:flex bg-gray-100 rounded-xl p-8 md:p-0">
                     <img class="w-48 sm:w-48 sm:h-auto mx-auto rounded-xl" src="<?php esc_url(the_field('author_profile_picture', 'user_'.get_the_author_meta('ID'))); ?>" alt="" width="384" height="512">
 
@@ -123,7 +125,7 @@
                     </div>
                 </figure>
         
-                <div class="border-t py-8 rounded-sm">
+                <div class="py-8 rounded-sm">
                     <h1 class="text-gray-600"><?php _e("You can't comment right now in this post.", "diveintowebworld"); ?></h1>
                 </div>
             </div>
