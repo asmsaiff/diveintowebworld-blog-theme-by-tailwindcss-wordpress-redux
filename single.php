@@ -89,6 +89,27 @@
                         </a>
                     </div>
                 </div>
+				
+				<figure class="sm:flex bg-gray-100 rounded-xl p-8 md:p-0">
+                    <img class="w-48 sm:w-48 sm:h-auto mx-auto rounded-xl" src="assets/images/author.jpg" alt="" width="384" height="512">
+                    <div class="pt-6 sm:p-8 text-center sm:text-left space-y-4">
+                        <blockquote>
+                            <p class="text-lg font-semibold">
+                                “Tailwind CSS is the only framework that I've seen scale
+                                on large teams. It’s easy to customize, adapts to any design,
+                                and the build size is tiny.”
+                            </p>
+                        </blockquote>
+                        <figcaption class="font-medium">
+                            <div class="text-cyan-600">
+                                Sarah Dayan
+                            </div>
+                            <div class="text-gray-500">
+                                Staff Engineer, Algolia
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
         
                 <div class="border-t py-8 rounded-sm">
                     <h1 class="text-gray-600"><?php _e("You can't comment right now in this post.", "diveintowebworld"); ?></h1>
@@ -102,9 +123,11 @@
                     <h2 class="section-title text-2xl font-semibold pb-1 mt-6">Popular Categories</h2>
                     <hr class="mb-6">
 
-                    <?php if(is_active_sidebar('diveintowebworld_popular_category_sidebar')) {
-                        dynamic_sidebar( 'diveintowebworld_popular_category_sidebar' );
-                    } ?>
+                    <?php
+                        if(is_active_sidebar('diveintowebworld_popular_category_sidebar')) {
+                            dynamic_sidebar( 'diveintowebworld_popular_category_sidebar' );
+                        } 
+                    ?>
                 </div>
             </div>
         </div>

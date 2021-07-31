@@ -119,7 +119,11 @@
                     <h2 class="section-title text-2xl font-semibold pb-1 mt-6">Popular Categories</h2>
                     <hr class="mb-6">
 
-                    Popular Categories Widget
+                    <?php
+                        if(is_active_sidebar('diveintowebworld_popular_category_sidebar')) {
+                            dynamic_sidebar( 'diveintowebworld_popular_category_sidebar' );
+                        } 
+                    ?>
                 </div>
             </div>
         </section>

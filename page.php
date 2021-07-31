@@ -59,6 +59,34 @@
             <div class="col-span-7 sm:col-span-5 xl:col-span-3">
                 <div class="top-36 sticky">
                     <h1 class="brand after-hr relative text-xl">Meet the Author</h1>
+
+                    <figure class="sm:flex xl:flex-col bg-gray-100 rounded-xl p-8 md:p-0 mt-6">
+                        <img class="w-48 sm:w-48 sm:h-48 mx-auto rounded-full self-center mt-4 sm:mt-0 xl:mt-6" src="assets/images/author.jpg" alt="" width="384" height="512">
+                        <div class="pt-6 sm:p-8 text-center sm:text-left space-y-4">
+                            <blockquote>
+                                <p class="text-lg font-semibold">
+                                “Tailwind CSS is the only framework that I've seen scale
+                                on large teams. It’s easy to customize, adapts to any design,
+                                and the build size is tiny.”
+                                </p>
+                            </blockquote>
+                            <figcaption class="font-medium">
+                                <div class="text-cyan-600">
+                                Sarah Dayan
+                                </div>
+                                <div class="text-gray-500">
+                                Staff Engineer, Algolia
+                                </div>
+                            </figcaption>
+
+                            <ul class="flex space-x-3 my-4">
+                                <li><a href="#!"><i class="fab fab fa-facebook-f"></i></a></li>
+                                <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#!"><i class="fab far fa-envelope"></i></a></li>
+                            </ul>
+                        </div>
+                    </figure>
                 </div>
             </div>
         </div>
