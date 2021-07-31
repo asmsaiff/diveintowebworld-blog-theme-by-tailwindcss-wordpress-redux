@@ -68,6 +68,15 @@ function diveintowebworld_register_required_plugins() {
 			'force_activation'   => true,
 			'force_deactivation' => false,
 		),
+
+		array(
+			'name'               => 'Custom Post Type UI',
+			'slug'               => 'custom-post-type-ui',
+			'required'           => true,
+			'version'            => '1.9.2',
+			'force_activation'   => true,
+			'force_deactivation' => false,
+		),
 	);
 
 	/*
