@@ -124,6 +124,7 @@
 
             <div class="col-span-5 sm:col-span-9 xl:col-span-3">
                 <div class="top-32 sticky">
+
                     <?php get_template_part('template-parts/post-sections/single-page-related-post'); ?>
 
                     <h2 class="section-title text-2xl font-semibold pb-1 mt-6">Popular Categories</h2>

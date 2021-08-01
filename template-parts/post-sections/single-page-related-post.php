@@ -1,123 +1,51 @@
+<?php
+    $categories = get_the_category( $post->ID );
+    $diveintowebworld_related_posts = new WP_Query(array(
+        'post_type'         => 'post',
+        'category__in'      => wp_get_post_categories(get_the_ID()),
+        'post__not_in'      => array(get_the_ID()),
+        'posts_per_page'    => 6,
+        'orderby'           => 'date',
+    ));
+
+    if($diveintowebworld_related_posts->have_posts()) :
+?>
+
 <h2 class="section-title text-2xl font-semibold pb-1"><?php _e('Related Posts', 'diveintowebworld'); ?></h2>
 <hr>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 gap-4 mt-2">
-    <div class="flex flex-col xl:flex-row border-b sm:border-none pb-4 sm:pb-0 w-full">
-        <img src="https://preview.colorlib.com/theme/magdesign/images/ximg_4.jpg.pagespeed.ic.2DwdgZu3vw.webp" alt="" class="rounded-lg w-40 lg:w-24 h-auto self-center hidden xl:block xl:mr-3">
+    <?php
+        while($diveintowebworld_related_posts->have_posts()) :
+            $diveintowebworld_related_posts->the_post();
+
+            $categories = get_the_category();
+            $category = $categories[mt_rand(0,count($categories)-1)];
+    ?>
+    <a href="<?php the_permalink(); ?>" class="flex flex-col xl:flex-row border-b sm:border-none pb-4 sm:pb-0 w-full">
+        <?php
+            if(has_post_thumbnail()) {
+                the_post_thumbnail( 'large', array('class'=>'rounded-lg w-40 lg:w-24 h-auto self-center hidden xl:block xl:mr-3') );
+            }
+        ?>
         
         <div>
             <div class="flex space-x-4">
                 <div class="flex text-sm font-semibold space-x-2">
-                    <h6 class="font-thin">Business, Travel</h6>
+                    <h6 class="font-thin"><?php echo $category->name; ?></h6>
                     <span>—</span>
-                    <p class="font-thin text-gray-500">7th July, 2021</p>
+                    <p class="font-thin text-gray-500"><?php echo get_the_date(); ?></p>
                 </div>
             </div>
 
-            <h2 class="py-1 leading-5">Your most unhappy customers are your greatest source of learning.</h2>
+            <h4 class="py-1 leading-5"><?php the_title(); ?></h4>
 
             <p class="text-sm block xl:hidden">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi molestias debitis nam facere modi doloremque nostrum recusandae excepturi saepe eaque. Nobis accusantium quasi hic voluptatem!
+                <?php echo get_the_excerpt(); ?>
             </p>
         </div>
-    </div>
-    
-    <div class="flex flex-col xl:flex-row border-b sm:border-none pb-4 sm:pb-0">
-        <img src="https://preview.colorlib.com/theme/magdesign/images/ximg_4.jpg.pagespeed.ic.2DwdgZu3vw.webp" alt="" class="rounded-lg w-40 lg:w-24 h-auto self-center hidden xl:block xl:mr-3">
-        
-        <div>
-            <div class="flex space-x-4">
-                <div class="flex text-sm font-semibold space-x-2">
-                    <h6 class="font-thin">Business, Travel</h6>
-                    <span>—</span>
-                    <p class="font-thin text-gray-500">7th July, 2021</p>
-                </div>
-            </div>
+    </a>
 
-            <h2 class="py-1 leading-5">Your most unhappy customers are your greatest source of learning.</h2>
-
-            <p class="text-sm block xl:hidden">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi molestias debitis nam facere modi doloremque nostrum recusandae excepturi saepe eaque. Nobis accusantium quasi hic voluptatem!
-            </p>
-        </div>
-    </div>
-
-    <div class="flex flex-col xl:flex-row border-b sm:border-none pb-4 sm:pb-0">
-        <img src="https://preview.colorlib.com/theme/magdesign/images/ximg_4.jpg.pagespeed.ic.2DwdgZu3vw.webp" alt="" class="rounded-lg w-40 lg:w-24 h-auto self-center hidden xl:block xl:mr-3">
-        
-        <div>
-            <div class="flex space-x-4">
-                <div class="flex text-sm font-semibold space-x-2">
-                    <h6 class="font-thin">Business, Travel</h6>
-                    <span>—</span>
-                    <p class="font-thin text-gray-500">7th July, 2021</p>
-                </div>
-            </div>
-
-            <h2 class="py-1 leading-5">Your most unhappy customers are your greatest source of learning.</h2>
-
-            <p class="text-sm block xl:hidden">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi molestias debitis nam facere modi doloremque nostrum recusandae excepturi saepe eaque. Nobis accusantium quasi hic voluptatem!
-            </p>
-        </div>
-    </div>
-
-    <div class="flex flex-col xl:flex-row border-b sm:border-none pb-4 sm:pb-0">
-        <img src="https://preview.colorlib.com/theme/magdesign/images/ximg_4.jpg.pagespeed.ic.2DwdgZu3vw.webp" alt="" class="rounded-lg w-40 lg:w-24 h-auto self-center hidden xl:block xl:mr-3">
-        
-        <div>
-            <div class="flex space-x-4">
-                <div class="flex text-sm font-semibold space-x-2">
-                    <h6 class="font-thin">Business, Travel</h6>
-                    <span>—</span>
-                    <p class="font-thin text-gray-500">7th July, 2021</p>
-                </div>
-            </div>
-
-            <h2 class="py-1 leading-5">Your most unhappy customers are your greatest source of learning.</h2>
-
-            <p class="text-sm block xl:hidden">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi molestias debitis nam facere modi doloremque nostrum recusandae excepturi saepe eaque. Nobis accusantium quasi hic voluptatem!
-            </p>
-        </div>
-    </div>
-
-    <div class="flex flex-col xl:flex-row border-b sm:border-none pb-4 sm:pb-0">
-        <img src="https://preview.colorlib.com/theme/magdesign/images/ximg_4.jpg.pagespeed.ic.2DwdgZu3vw.webp" alt="" class="rounded-lg w-40 lg:w-24 h-auto self-center hidden xl:block xl:mr-3">
-        
-        <div>
-            <div class="flex space-x-4">
-                <div class="flex text-sm font-semibold space-x-2">
-                    <h6 class="font-thin">Business, Travel</h6>
-                    <span>—</span>
-                    <p class="font-thin text-gray-500">7th July, 2021</p>
-                </div>
-            </div>
-
-            <h2 class="py-1 leading-5">Your most unhappy customers are your greatest source of learning.</h2>
-
-            <p class="text-sm block xl:hidden">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi molestias debitis nam facere modi doloremque nostrum recusandae excepturi saepe eaque. Nobis accusantium quasi hic voluptatem!
-            </p>
-        </div>
-    </div>
-
-    <div class="flex flex-col xl:flex-row border-b sm:border-none pb-4 sm:pb-0">
-        <img src="https://preview.colorlib.com/theme/magdesign/images/ximg_4.jpg.pagespeed.ic.2DwdgZu3vw.webp" alt="" class="rounded-lg w-40 lg:w-24 h-auto self-center hidden xl:block xl:mr-3">
-        
-        <div>
-            <div class="flex space-x-4">
-                <div class="flex text-sm font-semibold space-x-2">
-                    <h6 class="font-thin">Business, Travel</h6>
-                    <span>—</span>
-                    <p class="font-thin text-gray-500">7th July, 2021</p>
-                </div>
-            </div>
-
-            <h2 class="py-1 leading-5">Your most unhappy customers are your greatest source of learning.</h2>
-
-            <p class="text-sm block xl:hidden">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi molestias debitis nam facere modi doloremque nostrum recusandae excepturi saepe eaque. Nobis accusantium quasi hic voluptatem!
-            </p>
-        </div>
-    </div>
+    <?php endwhile; ?>
 </div>
+
+<?php endif; ?>

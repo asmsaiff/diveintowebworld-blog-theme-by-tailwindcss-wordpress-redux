@@ -1,3 +1,10 @@
+<?php
+    $diveintowebworld_popular_posts = new WP_Query(array(
+        'posts_per_page'            =>  5,
+        'orderby'                   =>  'comment_count'
+    ));
+?>
+
 <div class="top-32 sticky">
     <h2 class="section-title text-2xl font-semibold pb-1">Most Popular</h2>
     <hr>

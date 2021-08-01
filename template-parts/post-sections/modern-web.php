@@ -1,18 +1,12 @@
 <?php
     $wordpress_error_fix  = new WP_Query(array(
-        'post_type'         =>  'post',
         'posts_per_page'    =>  3,
-        'tax_query'         =>  array(
-            'relation'      =>  'OR',
+        'tax_query'         => array(
             array(
-                'taxonomy' => 'category',
-                'field'    => 'slug',
-                'terms'    => array('wordpress'),
-            ),
-            array(
-                'taxonomy'      =>  'post_tag',
-                'field'         =>  'slug',
-                'terms'         =>  array('error'),
+                'taxonomy'      => 'category',
+                'field'         => 'id',
+                'terms'         => array( 2, 13 ),
+                'operator'      => 'AND'
             )
         )
     ));
@@ -22,7 +16,7 @@
     <div>
         <h2 class="section-title text-2xl font-semibold pb-1"><?php _e('WordPress Error Fix', 'diveintowebworld'); ?></h2>
         <hr>
-        <?php if($wordpress_error_fix->post_count > 1) : ?>
+        <?php if($wordpress_error_fix->post_count >= 1) : ?>
         <div class="grid grid-cols-1 gap-6 mt-3">
             <?php
                 while($wordpress_error_fix->have_posts()) :
@@ -38,16 +32,18 @@
                 <div>
                     <div class="flex space-x-4">
                         <div class="flex text-sm font-semibold space-x-2">
-                            <h6 class="font-thin">Business, Travel</h6>
+                            <h6 class="font-thin"><?php the_category(); ?></h6>
                             <span>—</span>
-                            <p class="font-thin text-gray-500">7th July, 2021</p>
+                            <p class="font-thin text-gray-500"><?php echo get_the_date(); ?></p>
                         </div>
                     </div>
     
-                    <h2 class="py-1 text-xl font-bold">Your most unhappy customers are your greatest source of learning.</h2>
+                    <a href="<?php the_permalink(); ?>" class="py-1 text-xl font-bold">
+                        <?php the_title(); ?>
+                    </a>
     
                     <p class="text-gray-700 text-sm">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam eum quisquam aspernatur iusto ratione ad inventore deserunt velit....
+                        <?php echo get_the_excerpt(); ?>
                     </p>
                 </div>
             </div>
