@@ -23,8 +23,9 @@
                             'permalink'         =>  get_permalink(),
                         );
                     }
-                    wp_reset_query();
                 }
+
+                wp_reset_query();
             ?>
 
             <a href="<?php echo esc_url($featured_post_data[0]['permalink']); ?>" class="col-span-2 md:col-span-1 h-72 sm:h-96 lg:h-0 featured-image bg-cover bg-no-repeat bg-gray-700 bg-blend-overlay p-6 flex flex-col min-h-full" style="background-image:url('<?php echo esc_url($featured_post_data[0]['thumbnail']); ?>');">

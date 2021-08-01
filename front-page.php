@@ -19,7 +19,7 @@
         <?php get_template_part('template-parts/post-sections/cat-wordpress'); ?>
 
         <!-- Modern Web Technologies Section -->
-        <?php get_template_part('template-parts/post-sections/modern-web'); ?>
+        <?php get_template_part('template-parts/post-sections/wordpress-error'); ?>
     </main>
 
     <!-- Miscellaneous Section -->

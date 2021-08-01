@@ -57,3 +57,4 @@
 
 <?php 
     endif;
+    wp_reset_query();

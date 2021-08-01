@@ -1,14 +1,19 @@
 <?php
     $wordpress_error_fix  = new WP_Query(array(
         'posts_per_page'    =>  3,
-        'tax_query'         => array(
+        'tax_query' => array(
+            'relation' => 'AND',
             array(
-                'taxonomy'      => 'category',
-                'field'         => 'id',
-                'terms'         => array( 2, 13 ),
-                'operator'      => 'AND'
-            )
-        )
+                'taxonomy' => 'category',
+                'field'    => 'slug',
+                'terms'    => array( 'wordpress' ),
+            ),
+            array(
+                'taxonomy' => 'category',
+                'field'    => 'slug',
+                'terms'    => array( 'fix-error' ),
+            ),
+        ),
     ));
 ?>
 
@@ -21,6 +26,9 @@
             <?php
                 while($wordpress_error_fix->have_posts()) :
                     $wordpress_error_fix->the_post();
+
+                    $categories = get_the_category();
+                    $category = $categories[mt_rand(0,count($categories)-1)];
             ?>
             <div class="flex flex-col sm:flex-row sm:space-x-6 border-b sm:border-none pb-4 sm:pb-0">
                 <?php
@@ -32,7 +40,7 @@
                 <div>
                     <div class="flex space-x-4">
                         <div class="flex text-sm font-semibold space-x-2">
-                            <h6 class="font-thin"><?php the_category(); ?></h6>
+                            <h6 class="font-thin"><?php echo $category->name; ?></h6>
                             <span>—</span>
                             <p class="font-thin text-gray-500"><?php echo get_the_date(); ?></p>
                         </div>
@@ -55,6 +63,7 @@
         <?php
                 else: echo '<h4 class="text-lg mt-6">No Posts in this Category</h4>';
             endif;
+            wp_reset_query();
         ?>
     </div>
 

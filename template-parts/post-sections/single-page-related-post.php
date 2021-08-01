@@ -48,4 +48,4 @@
     <?php endwhile; ?>
 </div>
 
-<?php endif; ?>
+<?php endif; wp_reset_query(); ?>

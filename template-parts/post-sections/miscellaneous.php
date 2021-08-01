@@ -22,8 +22,6 @@
                 'excerpt'           =>  get_the_excerpt(),
             );
         };
-
-        wp_reset_query();
     };
 
     if($diveintowebworld_cat_wp->post_count > 1) :
@@ -91,3 +89,4 @@
 
 <?php
     endif;
+    wp_reset_query();
