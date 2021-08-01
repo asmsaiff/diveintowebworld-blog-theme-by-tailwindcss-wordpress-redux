@@ -23,6 +23,7 @@
                             'permalink'         =>  get_permalink(),
                         );
                     }
+                    wp_reset_query();
                 }
             ?>
 

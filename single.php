@@ -105,17 +105,9 @@
                             </p>
                         </blockquote>
                         <figcaption class="font-medium">
-                            <?php
-                                $current_user = wp_get_current_user();
-                            
-                                $current_user = wp_get_current_user();
-                                if ( ! $current_user->exists() ) {
-                                    return;
-                                }
-                            ?>
                             <div class="text-gray-800 font-semibold">
                                 <?php
-                                    echo $current_user->user_firstname . ' ' . $current_user->user_lastname;
+                                    the_author_meta('display_name');
                                 ?>
                             </div>
                             <div class="text-gray-500 text-sm">

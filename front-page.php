@@ -23,7 +23,7 @@
     </main>
 
     <!-- Miscellaneous Section -->
-    
+    <?php get_template_part('template-parts/post-sections/miscellaneous'); ?>
 
 <?php
     get_footer();

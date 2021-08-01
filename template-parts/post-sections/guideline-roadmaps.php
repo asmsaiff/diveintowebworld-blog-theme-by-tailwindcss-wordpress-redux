@@ -40,7 +40,7 @@
             </p>
 
             <div class="flex space-x-2">
-                <img src="<?php echo get_avatar_url(get_the_author_meta('ID')) ?>" alt="" class="rounded-full w-10 h-10">
+                <img src="<?php echo get_avatar_url(get_the_author_meta('ID')); ?>" alt="" class="rounded-full w-10 h-10">
 
                 <div>
                     <h4 class="font-semibold"><?php the_author(); ?></h4>
@@ -50,6 +50,7 @@
         </div>
         <?php
             endwhile;
+            wp_reset_query();
         ?>
     </div>
 </div>
