@@ -17,16 +17,17 @@
     <!-- Site Header -->
     <header class="border-t-4 border-blue-600 sticky top-0 z-50">
         <div class="shadow-lg z-20 bg-white">
-            <div class="px-2 md:px-4 container mx-auto lg:px-0 py-2 border-b border-gray-300">
+            <div class="px-2 md:px-4 container mx-auto lg:px-0 pt-2 md:pb-2 border-b border-gray-300">
                 <div class="flex flex-col md:flex-row justify-between text-sm">
-                    <div class="flex justify-between md:justify-start text-center md:text-left">
-                        <div class="text-left">
-                            <i class="far fa-moon"></i>
-                            <span>18<sup>•C</sup></span>
-                            <span class="block md:inline">New York</span>
+                    <div class="flex justify-between md:justify-start text-left">
+                        <div class="hidden md:block mr-2 md:border-r border-gray-300 pr-2">
+                            <h4 class="w-20 md:w-auto text-right">
+                                <span id="current_day"></span>,
+                                <?php echo date(get_option('date_format')); ?>
+                            </h4>
                         </div>
-                        <div class="ml-2 md:border-l border-gray-300 pl-2">
-                            <h4 class="w-20 md:w-auto text-right">Monday, July 5, 2021</h4>
+                        <div class="pl-0 md:pl-0 ml-0 md:ml-2 md:mt-0 mt-2">
+                            <?php echo do_shortcode('[gtranslate]'); ?>
                         </div>
                     </div>
                     <div class="flex justify-center md:justify-start mt-3 md:mt-0 space-x-4">
@@ -43,7 +44,7 @@
                                 <li><a href="#!" class="hover:underline">Privacy Policy</a></li>
                             </ul>
                         </div>
-                        <ul class="flex space-x-3 -mt-10 md:-mt-0">
+                        <ul class="flex space-x-3 -mt-8 md:-mt-0 absolute md:relative right-4 md:right-0">
                             <li><a href="#!"><i class="fab fab fa-facebook-f"></i></a></li>
                             <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
@@ -62,14 +63,13 @@
                         <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-block md:hidden w-8 h-8 bg-gray-200 text-gray-600 p-1">
                             <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                         </button>
-                        
-                        <nav class="absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col md:flex-row md:space-x-6 font-thin w-full md:w-auto bg-white shadow-md md:rounded-none md:shadow-none md:bg-transparent pt-0 md:p-0 mr-4 px-2 md:px-0" :class="{ 'flex' : mobileMenuOpen , 'hidden' : !mobileMenuOpen}"  @click.away="mobileMenuOpen = false">
-                            <a href="#!" class="block py-1">Home</a>
-                            <a href="http://localhost/diww/category/wordpress/" class="block py-1">WordPress</a>
-                            <a href="#!" class="block py-1">Featured</a>
-                            <a href="#!" class="block py-1">Technology</a>
-                            <a href="#!" class="block py-1">Latest</a>
-                        </nav>
+
+                        <?php
+                            $diww_pri_menu = wp_nav_menu(array(
+                                'theme-location'    =>  'primary_menu',
+                                'menu_class'        =>  'absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col md:flex-row md:space-x-4 font-thin w-full md:w-auto bg-white shadow-md md:rounded-none md:shadow-none md:bg-transparent pt-0 md:p-0 mr-4 px-2 md:px-0',
+                            ));
+                        ?>
 
                         <div class="flex border-l border-gray-300 pl-4">
                             <button><i class="far fa-user-circle self-center"></i></button>

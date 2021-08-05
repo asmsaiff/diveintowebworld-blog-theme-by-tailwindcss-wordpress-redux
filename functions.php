@@ -19,6 +19,10 @@
         add_theme_support('custom-background');
         add_theme_support('menus');
         add_theme_support('widgets');
+
+        register_nav_menus( array(
+            'primary_menu'      =>  __('Primary Menu', 'diveintowebworld'),
+        ) );
     }
     add_action('after_setup_theme', 'diveintowebworld_theme_setup');
 
@@ -31,6 +35,7 @@
         // JS Enqueue
         wp_enqueue_script('fontawesome-kit', '//kit.fontawesome.com/6305d37200.js', null, VERSION, true);
         wp_enqueue_script('alpine-js', '//cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js', null, VERSION, true);
+        wp_enqueue_script('app-js', get_template_directory_uri().'/assets/js/app.js', null, VERSION, true);
     }
     add_action('wp_enqueue_scripts', 'diveintowebworld_assets_enqueue');
 

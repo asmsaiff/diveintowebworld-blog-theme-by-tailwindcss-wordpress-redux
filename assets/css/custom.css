@@ -7,7 +7,7 @@ body {
     font-family: 'Philosopher', sans-serif;
 }
 
-nav a::after {
+.menu-item a::after {
     content: '';
     display: block;
     width: 0;
@@ -18,7 +18,7 @@ nav a::after {
     position: relative;
 }
 
-nav a:hover::after {
+.menu-item a:hover::after {
     width: 100%;
     transition: width .3s;
 }
