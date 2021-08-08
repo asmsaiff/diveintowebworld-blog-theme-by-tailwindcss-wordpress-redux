@@ -28,7 +28,7 @@
                     </span>
                     <span class="px-2 text-sm">
                         <?php diveintowebworld_set_post_view(); ?>
-                        <i class="invisible sm:visible -ml-4 sm:-ml-0 fab fa-cloudscale mr-1"></i>
+                        <i class="far fa-eye invisible sm:visible -ml-4 sm:-ml-0 mr-1"></i>
                         <a href=""><?= diveintowebworld_get_post_view(); ?></a>
                     </span>
                 </div>

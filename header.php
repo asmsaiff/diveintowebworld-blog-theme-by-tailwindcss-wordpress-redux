@@ -59,15 +59,20 @@
                         <?php bloginfo( 'title' ); ?>
                     </a>
 
-                    <div class="flex" x-data="{ mobileMenuOpen : false }">
-                        <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-block md:hidden w-8 h-8 bg-gray-200 text-gray-600 p-1">
-                            <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    <div class="flex">
+                        <button class="inline-block lg:hidden w-8 h-8 text-gray-600 p-1 mr-4 md:mr-0">
+                            <span id="open">
+                                <svg role="img" class="ast-mobile-svg ast-menu-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 13h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1zM3 7h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1zM3 19h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1z"></path></svg>
+                            </span>
+                            <span id="close" style="display: none;">
+                                <svg class="ast-mobile-svg ast-close-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.293 6.707l5.293 5.293-5.293 5.293c-0.391 0.391-0.391 1.024 0 1.414s1.024 0.391 1.414 0l5.293-5.293 5.293 5.293c0.391 0.391 1.024 0.391 1.414 0s0.391-1.024 0-1.414l-5.293-5.293 5.293-5.293c0.391-0.391 0.391-1.024 0-1.414s-1.024-0.391-1.414 0l-5.293 5.293-5.293-5.293c-0.391-0.391-1.024-0.391-1.414 0s-0.391 1.024 0 1.414z"></path></svg>
+                            </span>
                         </button>
 
                         <?php
-                            $diww_pri_menu = wp_nav_menu(array(
+                            wp_nav_menu(array(
                                 'theme-location'    =>  'primary_menu',
-                                'menu_class'        =>  'absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col md:flex-row md:space-x-4 font-thin w-full md:w-auto bg-white shadow-md md:rounded-none md:shadow-none md:bg-transparent pt-0 md:p-0 mr-4 px-2 md:px-0',
+                                'menu_class'        =>  'absolute lg:relative top-16 left-0 lg:top-0 z-20 md:flex flex-col lg:flex-row lg:space-x-4 font-thin w-full lg:w-auto bg-white shadow-md md:rounded-none md:shadow-none lg:bg-transparent pt-0 md:p-0 mr-4 px-2 md:px-4 lg:px-0 pb-3 lg:pb-0',
                             ));
                         ?>
 
