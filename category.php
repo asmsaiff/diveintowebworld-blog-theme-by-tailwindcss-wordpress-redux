@@ -47,6 +47,7 @@
 
             <?php
                     endwhile;
+                else: echo '<p class="bg-red-100 mt-6 px-6 py-3 col-span-3">Sorry, There is <span class="font-bold">NO</span> post found in this category!</p>';
                 endif;
             ?>
         </div>
