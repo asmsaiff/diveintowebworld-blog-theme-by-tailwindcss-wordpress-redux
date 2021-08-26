@@ -22,7 +22,9 @@
 
         register_nav_menus( array(
             'primary_menu'      =>  __('Primary Menu', 'diveintowebworld'),
-        ) );
+            // 'login__menu'  =>  __('Login Forum Menu', 'diveintowebworld'),
+            'tos_menu'          =>  __('TOS Menu', 'diveintowebworld'),
+        ));
     }
     add_action('after_setup_theme', 'diveintowebworld_theme_setup');
 

@@ -39,10 +39,14 @@
                         </div>
 
                         <div class="hidden md:block">
-                            <ul class="flex space-x-2 border-r pr-4">
-                                <li><a href="#!" class="hover:underline">Terms & Conditions</a></li>
-                                <li><a href="#!" class="hover:underline">Privacy Policy</a></li>
-                            </ul>
+                            <?php
+                                wp_nav_menu(array(
+                                    'theme_location'        =>  'tos_menu',
+                                    'menu_class'            =>  'flex space-x-2 border-r pr-4',
+                                    'menu_id'               =>  'tos-menu',
+                                    'container'         =>  'ul'
+                                ));
+                            ?>
                         </div>
                         <ul class="flex space-x-3 -mt-8 md:-mt-0 absolute md:relative right-4 md:right-0">
                             <li><a href="#!"><i class="fab fab fa-facebook-f"></i></a></li>
@@ -73,6 +77,8 @@
                             wp_nav_menu(array(
                                 'theme-location'    =>  'primary_menu',
                                 'menu_class'        =>  'absolute lg:relative top-16 left-0 lg:top-0 z-20 md:flex flex-col lg:flex-row lg:space-x-4 font-thin w-full lg:w-auto bg-white shadow-md md:rounded-none md:shadow-none lg:bg-transparent pt-0 md:p-0 mr-4 px-2 md:px-4 lg:px-0 pb-3 lg:pb-0',
+                                'menu_id'           =>  'primary_menu',
+                                'container'         =>  'ul'
                             ));
                         ?>
 

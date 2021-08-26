@@ -5,7 +5,7 @@
                 <div class="grid grid-cols-1 xl:grid-cols-6 gap-8 sm:gap-16">
                     <div class="col-span-2">
                         <h1 class="footer-brand text-2xl">
-                            Dive Into Web World
+                            <?php bloginfo( 'name' ); ?>
                         </h1>
                         <hr class="w-16 my-3 border-gray-300">
 
