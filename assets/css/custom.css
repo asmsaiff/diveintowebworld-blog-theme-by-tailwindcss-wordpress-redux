@@ -62,3 +62,7 @@ body {
     right: 0;
     background-color: silver;
 }
+
+.useful_links_menu .menu-item a:hover::after {
+    width: 0%;
+}

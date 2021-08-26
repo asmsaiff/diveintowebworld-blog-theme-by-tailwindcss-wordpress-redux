@@ -1,5 +1,9 @@
 <?php
     require_once( get_theme_file_path( '/inc/diveintowebworld-plugins.php' ) );
+
+    // Option Panel
+    require_once( get_theme_file_path( '/lib/redux-framework/redux-framework.php' ) );
+    require_once( get_theme_file_path( '/inc/options-panel/redux-config.php' ) );
     
     if ( site_url() == "http://localhost/diww/" ) {
         define( "VERSION", time() );
@@ -24,6 +28,8 @@
             'primary_menu'      =>  __('Primary Menu', 'diveintowebworld'),
             // 'login__menu'  =>  __('Login Forum Menu', 'diveintowebworld'),
             'tos_menu'          =>  __('TOS Menu', 'diveintowebworld'),
+            'useful_links'      =>  __('Footer Useful Links Menu', 'diveintowebworld'),
+            'reference_menu'      =>  __('Reference Links', 'diveintowebworld'),
         ));
     }
     add_action('after_setup_theme', 'diveintowebworld_theme_setup');
@@ -106,4 +112,18 @@
         $pagination = str_replace('next page-numbers', 'bg-gray-100 hover:bg-blue-600 hover:text-white transition-all duration-200 cursor-pointer w-8 h-8 rounded-full flex ml-3', $pagination);
 
         echo $pagination;
+    }
+
+    function diveintowebworld_menu_classes($classes, $item, $args) {
+        $classes[] = 'w-max';
+        return $classes;
+    }
+    add_filter('nav_menu_css_class', 'diveintowebworld_menu_classes', 1, 3);
+
+    function get_diveintowebworld_redux_data($key, $default = 'Default Text') {
+        if(class_exists('Redux')) {
+            return Redux::get_option('diveintowebworld_options_data', $key, $default);
+        } else {
+            return $default;
+        }
     }

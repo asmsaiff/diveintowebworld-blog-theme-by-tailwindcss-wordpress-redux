@@ -10,7 +10,7 @@
                         <hr class="w-16 my-3 border-gray-300">
 
                         <p class="text-sm">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, corrupti fuga obcaecati fugit impedit optio, modi similique tempore perspiciatis earum deleniti
+                            <?php echo get_diveintowebworld_redux_data('short_description'); ?>
                         </p>
 
                         <ul class="flex space-x-3 my-4">
@@ -20,33 +20,39 @@
                             <li><a href="#!"><i class="fab far fa-envelope"></i></a></li>
                         </ul>
                     </div>
+
                     <div>
-                        <h5 class="text-gray-900 text-lg">For Candidates</h5>
+                        <h5 class="text-gray-900 text-lg"><?php _e('Useful Links', 'diveintowebworld'); ?></h5>
                         <hr class="w-16 my-3 border-gray-300">
-                        <ul class="mt-3 space-y-1 text-gray-700">
-                            <li><a href="#">Browse Jobs</a></li>
-                            <li><a href="#">Add Resume</a></li>
-                            <li><a href="#">Job Alerts</a></li>
-                            <li><a href="#">My Bookmarks</a></li>
-                        </ul>
+                        <?php
+                            wp_nav_menu(array(
+                                'theme_location'        =>  'useful_links',
+                                'menu_class'            =>  'mt-3 space-y-1 text-gray-700',
+                                'menu_id'               =>  'useful_links_menu',
+                                'container'             =>  'ul',
+                            ));
+                        ?>
                     </div>
 
                     <div>
-                        <h5 class="text-gray-900 text-lg">Useful Links</h5>
+                        <h5 class="text-gray-900 text-lg"><?php _e('Reference', 'diveintowebworld') ?></h5>
                         <hr class="w-16 my-3 border-gray-300">
                         <ul class="mt-3 space-y-1 text-gray-700">
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Use</a></li>
-                            <li><a href="#">My Account</a></li>
-                        </ul>
+                        <?php
+                            wp_nav_menu(array(
+                                'theme_location'            =>  'reference_menu',
+                                'menu_id'                   =>  'reference_menu',
+                                'menu_class'                =>  'mt-3 space-y-1 text-gray-700',
+                                'container'                 =>  'ul'
+                            ));
+                        ?>
                     </div>
 
                     <div class="col-span-2 md:col-span-2">
-                        <h5 class="text-gray-900 text-lg"><i class="far mr-2 fa-envelope"></i>Sign Up For a Newsletter</h5>
+                        <h5 class="text-gray-900 text-lg"><i class="far mr-2 fa-envelope"></i><?php _e('Sign Up For a Newsletter', 'diveintowebworld'); ?></h5>
                         <hr class="w-16 my-3 border-gray-300">
                         <p class="pb-3 text-gray-700">
-                            Weekly breaking news, analysis and cutting edge<br>advices on job searching.
+                            <?php _e('Weekly breaking news, analysis and cutting edge<br>advices on job searching.', 'diveintowebworld'); ?>
                         </p>
 
                         <form action="">
