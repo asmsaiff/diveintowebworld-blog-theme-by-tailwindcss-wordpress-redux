@@ -49,10 +49,33 @@
                             ?>
                         </div>
                         <ul class="flex space-x-3 -mt-8 md:-mt-0 absolute md:relative right-4 md:right-0">
-                            <li><a href="#!"><i class="fab fab fa-facebook-f"></i></a></li>
-                            <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#!"><i class="fab far fa-envelope"></i></a></li>
+                            <?php if(get_diveintowebworld_redux_data('facebook')) : ?>
+                            <li>
+                                <a href="<?php echo get_diveintowebworld_redux_data('facebook'); ?>">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <?php
+                                endif;
+
+                                if(get_diveintowebworld_redux_data('linked_in')) :
+                            ?>
+                            <li>
+                                <a href="<?php echo get_diveintowebworld_redux_data('linked_in'); ?>">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                            <?php
+                                endif;
+
+                                if(get_diveintowebworld_redux_data('twitter')) :
+                            ?>
+                            <li>
+                                <a href="<?php echo get_diveintowebworld_redux_data('twitter'); ?>">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>

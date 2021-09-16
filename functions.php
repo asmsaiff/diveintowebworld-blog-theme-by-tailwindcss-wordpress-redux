@@ -2,7 +2,6 @@
     require_once( get_theme_file_path( '/inc/diveintowebworld-plugins.php' ) );
 
     // Option Panel
-    require_once( get_theme_file_path( '/lib/redux-framework/redux-framework.php' ) );
     require_once( get_theme_file_path( '/inc/options-panel/redux-config.php' ) );
     
     if ( site_url() == "http://localhost/diww/" ) {
@@ -119,7 +118,7 @@
     }
     add_filter('nav_menu_css_class', 'diveintowebworld_menu_classes', 1, 3);
 
-    function get_diveintowebworld_redux_data($key, $default = 'Default Text') {
+    function get_diveintowebworld_redux_data($key, $default = '') {
         if(class_exists('Redux')) {
             return Redux::get_option('diveintowebworld_options_data', $key, $default);
         } else {

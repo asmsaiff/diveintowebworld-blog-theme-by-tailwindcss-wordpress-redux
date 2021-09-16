@@ -14,10 +14,33 @@
                         </p>
 
                         <ul class="flex space-x-3 my-4">
-                            <li><a href="#!"><i class="fab fab fa-facebook-f"></i></a></li>
-                            <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#!"><i class="fab far fa-envelope"></i></a></li>
+                            <?php if(get_diveintowebworld_redux_data('facebook')) : ?>
+                            <li>
+                                <a href="<?php echo get_diveintowebworld_redux_data('facebook'); ?>">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <?php
+                                endif;
+
+                                if(get_diveintowebworld_redux_data('linked_in')) :
+                            ?>
+                            <li>
+                                <a href="<?php echo get_diveintowebworld_redux_data('linked_in'); ?>">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                            <?php
+                                endif;
+
+                                if(get_diveintowebworld_redux_data('twitter')) :
+                            ?>
+                            <li>
+                                <a href="<?php echo get_diveintowebworld_redux_data('twitter'); ?>">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
 
@@ -52,7 +75,7 @@
                         <h5 class="text-gray-900 text-lg"><i class="far mr-2 fa-envelope"></i><?php _e('Sign Up For a Newsletter', 'diveintowebworld'); ?></h5>
                         <hr class="w-16 my-3 border-gray-300">
                         <p class="pb-3 text-gray-700">
-                            <?php _e('Weekly breaking news, analysis and cutting edge<br>advices on job searching.', 'diveintowebworld'); ?>
+                            <?php echo get_diveintowebworld_redux_data('last_widget_area_short_desc'); ?>
                         </p>
 
                         <form action="">
@@ -68,9 +91,7 @@
 
         <div class="px-12 py-6 sticky top-0 z-50 border-t border-gray-300">
             <div class="container mx-auto text-center text-gray-700">
-                <p>
-                    Copyright © <a href="#" class="font-semibold text-gray-900 hover:underline footer-brand">Dive Into Web World</a> | Designed & Developed by - Saifullah Saif
-                </p>
+                <?php echo get_diveintowebworld_redux_data('copyright'); ?>
             </div>
         </div>
     </footer>

@@ -34,3 +34,62 @@
             ),
         )
     ) );
+
+    Redux::setSection( $opt_val, array(
+        'title'  => esc_html__( 'Social Media', $diveintowebworld_textdomain ),
+        'id'     => 'social_media',
+        'icon'   => 'el el-th-large',
+        'fields' => array(
+            array(
+                'id'       => 'facebook',
+                'type'     => 'text',
+                'title'    => esc_html__( 'Facebook', $diveintowebworld_textdomain ),
+            ),
+
+            array(
+                'id'       => 'twitter',
+                'type'     => 'text',
+                'title'    => esc_html__( 'Twitter', $diveintowebworld_textdomain ),
+            ),
+
+            array(
+                'id'       => 'linked_in',
+                'type'     => 'text',
+                'title'    => esc_html__( 'LinkedIn', $diveintowebworld_textdomain ),
+            ),
+        )
+    ) );
+
+    Redux::setSection( $opt_val, array(
+        'title'  => esc_html__( 'Footer', $diveintowebworld_textdomain ),
+        'id'     => 'footer_copyright',
+        'icon'   => 'el el-th-large',
+        'fields' => array(
+            array(
+                'id'        =>  'second_widget_area_title',
+                'type'      =>  'text',
+                'title'     =>  esc_html__( 'Second Widget Area Title', $diveintowebworld_textdomain ),
+            ),
+            array(
+                'id'        =>  'third_widget_area_title',
+                'type'      =>  'text',
+                'title'     =>  esc_html__( 'Third Widget Area Title', $diveintowebworld_textdomain ),
+            ),
+            array(
+                'id'        =>  'last_widget_area_title',
+                'type'      =>  'text',
+                'title'     =>  esc_html__( 'Last Widget Area Title', $diveintowebworld_textdomain ),
+            ),
+            array(
+                'id'        =>  'last_widget_area_short_desc',
+                'type'      =>  'textarea',
+                'rows'      =>  3,
+                'title'     =>  esc_html__( 'Last Widget Area Description', $diveintowebworld_textdomain ),
+            ),
+            array(
+                'id'        => 'copyright',
+                'type'      => 'editor',
+                'title'     => esc_html__( 'Copyright', $diveintowebworld_textdomain ),
+            ),
+        )
+    ) );

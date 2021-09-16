@@ -43,16 +43,16 @@
                         <span class="ml-1 block sm:hidden w-max sm:w-auto self-center text-sm mr-2">Share Posts — </span>
                     </div>
                     <div class="flex flex-row sm:flex-col sm:space-y-4 space-x-2 sm:space-x-0">
-                        <a href="" class="w-8 h-8 bg-gray-100 hover:bg-blue-600 text-center leading-relaxed text-gray-400 hover:text-white rounded-full p-1 transition duration-300">
+                        <a href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer" class="w-8 h-8 bg-gray-100 hover:bg-blue-600 text-center leading-relaxed text-gray-400 hover:text-white rounded-full p-1 transition duration-300">
                             <i class="fab fa-facebook-f"></i>
                         </a>
 
-                        <a href="" class="w-8 h-8 bg-gray-100 hover:bg-blue-400 text-center leading-relaxed text-gray-400 hover:text-white rounded-full p-1 transition duration-300">
+                        <a href="http://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>" class="w-8 h-8 bg-gray-100 hover:bg-blue-400 text-center leading-relaxed text-gray-400 hover:text-white rounded-full p-1 transition duration-300">
                             <i class="fab fa-twitter"></i>
                         </a>
                         
-                        <a href="" class="w-8 h-8 bg-gray-100 hover:bg-gray-600 text-center leading-relaxed text-gray-400 hover:text-white rounded-full p-1 transition duration-300">
-                            <i class="far fa-envelope"></i>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>" class="w-8 h-8 bg-gray-100 hover:bg-gray-600 text-center leading-relaxed text-gray-400 hover:text-white rounded-full p-1 transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
                 </div>
