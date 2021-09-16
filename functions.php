@@ -26,7 +26,6 @@
 
         register_nav_menus( array(
             'primary_menu'      =>  __('Primary Menu', 'diveintowebworld'),
-            // 'login__menu'  =>  __('Login Forum Menu', 'diveintowebworld'),
             'tos_menu'          =>  __('TOS Menu', 'diveintowebworld'),
             'useful_links'      =>  __('Footer Useful Links Menu', 'diveintowebworld'),
             'reference_menu'      =>  __('Reference Links', 'diveintowebworld'),
