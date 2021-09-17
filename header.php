@@ -99,9 +99,10 @@
                         <?php
                             wp_nav_menu(array(
                                 'theme-location'    =>  'primary_menu',
-                                'menu_class'        =>  'absolute lg:relative top-16 left-0 lg:top-0 z-20 md:flex flex-col lg:flex-row lg:space-x-4 font-thin w-full lg:w-auto bg-white shadow-md md:rounded-none md:shadow-none lg:bg-transparent pt-0 md:p-0 mr-4 px-2 md:px-4 lg:px-0 pb-3 lg:pb-0',
+                                'menu_class'        =>  '',
                                 'menu_id'           =>  'primary_menu',
-                                'container'         =>  'ul'
+                                'container'         =>  '',
+                                'items_wrap'        =>  '<ul id="primary_menu" class="absolute lg:relative top-16 left-0 lg:top-0 z-20 md:flex flex-col lg:flex-row lg:space-x-4 font-thin w-full lg:w-auto bg-white shadow-md md:rounded-none md:shadow-none lg:bg-transparent pt-0 md:p-0 mr-4 px-2 md:px-4 lg:px-0 pb-3 lg:pb-0" style="visibility: hidden;">%3$s</ul>'
                             ));
                         ?>
 

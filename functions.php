@@ -34,7 +34,8 @@
 
     function diveintowebworld_assets_enqueue() {
         // Style Enqueue
-        wp_enqueue_style('tailwind-css', get_template_directory_uri().'/assets/css/style.css', null, VERSION);
+//         wp_enqueue_style('tailwind-css', get_template_directory_uri().'/assets/css/style.css', null, VERSION);
+        wp_enqueue_style('tailwind-css', '//unpkg.com/tailwindcss@^2/dist/tailwind.min.css');
         wp_enqueue_style('custom-css', get_template_directory_uri().'/assets/css/custom.css', null, VERSION);
         wp_enqueue_style('theme-style', get_stylesheet_uri(), null, VERSION);
 
