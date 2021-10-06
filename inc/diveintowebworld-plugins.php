@@ -69,6 +69,15 @@ function diveintowebworld_register_required_plugins() {
 			'force_deactivation' => false,
 		),
 
+		array(
+			'name'               => 'Redux Framework',
+			'slug'               => 'redux-framework',
+			'required'           => true,
+			'version'            => '4.2.14',
+			'force_activation'   => false,
+			'force_deactivation' => false,
+		),
+
 		// array(
 		// 	'name'               => 'Custom Post Type UI',
 		// 	'slug'               => 'custom-post-type-ui',
