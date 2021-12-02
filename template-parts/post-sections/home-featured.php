@@ -13,12 +13,12 @@
                         $diveintowebworld_latest_posts->the_post();
 
                         $categories = get_the_category();
-                        $category = $categories[mt_rand(0,count($categories)-1)];
+                        // $category = $categories[mt_rand(0,count($categories)-1)];
 
                         $featured_post_data[] = array(
                             'title'             =>  get_the_title(),
                             'date'              =>  get_the_date(),
-                            'category'          =>  $category->name,
+                            // 'category'          =>  $category->name,
                             "thumbnail"         =>  get_the_post_thumbnail_url(get_the_ID(),"large"),
                             'permalink'         =>  get_permalink(),
                         );
@@ -34,7 +34,7 @@
                     <div class="flex space-x-4 mt-6">
                         <div class="flex text-sm font-semibold space-x-2">
                             <h6 class="font-thin">
-                                <?php echo esc_html( $featured_post_data[0]['category'] ); ?>
+                                <?php //echo esc_html( $featured_post_data[0]['category'] ); ?>
                             </h6>
                             <span>—</span>
                             <p class="font-thin text-gray-50"><?php echo esc_html( $featured_post_data[0]['date'] ); ?></p>
@@ -56,7 +56,7 @@
                         <div class="flex space-x-4 mt-6">
                             <div class="flex flex-col xl:flex-row text-sm font-semibold space-x-0 xl:space-x-2">
                                 <h6 class="font-thin">
-                                    <?php echo esc_html( $featured_post_data[$i]['category'] ); ?>
+                                    <?php //echo esc_html( $featured_post_data[$i]['category'] ); ?>
                                 </h6>
                                 <span>—</span>
                                 <p class="font-thin text-gray-50">

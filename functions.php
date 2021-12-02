@@ -146,12 +146,6 @@
 // 		single_page_list.forEach((val, key) => {
 // 			val.classList = 'list-disc list-inside mb-6'
 // 		})
-		
-		  document.addEventListener('DOMContentLoaded', (event) => {
-		  document.querySelectorAll('pre .codeDiv').forEach((el) => {
-			hljs.highlightElement(el);
-		  });
-		});
 	</script>
 <?php
 		}

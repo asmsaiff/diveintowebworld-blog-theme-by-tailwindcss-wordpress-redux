@@ -19,7 +19,7 @@
             $diveintowebworld_related_posts->the_post();
 
             $categories = get_the_category();
-            $category = $categories[mt_rand(0,count($categories)-1)];
+            // $category = $categories[mt_rand(0,count($categories)-1)];
     ?>
     <a href="<?php the_permalink(); ?>" class="flex flex-col xl:flex-row border-b sm:border-none pb-4 sm:pb-0 w-full">
         <?php
@@ -31,7 +31,7 @@
         <div>
             <div class="flex space-x-4">
                 <div class="flex text-sm font-semibold space-x-2">
-                    <h6 class="font-thin"><?php echo $category->name; ?></h6>
+                    <h6 class="font-thin"><?php //echo $category->name; ?></h6>
                     <span>—</span>
                     <p class="font-thin text-gray-500"><?php echo get_the_date(); ?></p>
                 </div>

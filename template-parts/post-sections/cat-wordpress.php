@@ -11,12 +11,12 @@
             $diveintowebworld_cat_wp->the_post();
 
             $categories = get_the_category();
-            $category = $categories[mt_rand(0,count($categories)-1)];
+            // $category = $categories[mt_rand(0,count($categories)-1)];
 
             $cat_wp_post_data[] = array(
                 'title'             =>  get_the_title(),
                 'date'              =>  get_the_date(),
-                'category'          =>  $category->name,
+                // 'category'          =>  $category->name,
                 "thumbnail"         =>  get_the_post_thumbnail_url(get_the_ID(),"large"),
                 'permalink'         =>  get_permalink(),
                 'excerpt'           =>  get_the_excerpt(),
@@ -41,7 +41,7 @@
             
             <div class="flex space-x-4 mt-6">
                 <div class="flex text-sm font-semibold space-x-2">
-                    <h6 class="font-thin"><?php echo esc_html($cat_wp_post_data[$i]['category']); ?></h6>
+                    <h6 class="font-thin"><?php //echo esc_html($cat_wp_post_data[$i]['category']); ?></h6>
                     <span>—</span>
                     <p class="font-thin text-gray-500"><?php echo esc_html($cat_wp_post_data[$i]['date']); ?></p>
                 </div>
@@ -71,7 +71,7 @@
         <div class="border-b sm:border-none pb-4 sm:pb-0">
             <div class="flex space-x-4 md:mt-6">
                 <div class="flex text-sm font-semibold space-x-2">
-                    <h6 class="font-thin"><?php echo esc_html($cat_wp_post_data[$i]['category']); ?></h6>
+                    <h6 class="font-thin"><?php //echo esc_html($cat_wp_post_data[$i]['category']); ?></h6>
                     <span>—</span>
                     <p class="font-thin text-gray-500"><?php echo esc_html($cat_wp_post_data[$i]['date']); ?></p>
                 </div>
