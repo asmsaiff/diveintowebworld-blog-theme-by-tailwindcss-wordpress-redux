@@ -4,7 +4,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></title>
+    <title><?php bloginfo( 'title' ); ?> - <?php bloginfo( 'description' ); ?></title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,10 +21,10 @@
                 <div class="flex flex-col md:flex-row justify-between text-sm">
                     <div class="flex justify-between md:justify-start text-left">
                         <div class="hidden md:block mr-2 md:border-r border-gray-300 pr-2">
-                            <h4 class="w-20 md:w-auto text-right">
+                            <h6 class="w-20 md:w-auto text-right">
                                 <span id="current_day"></span>,
                                 <?php echo date(get_option('date_format')); ?>
-                            </h4>
+                            </h6>
                         </div>
                         <div class="pl-0 md:pl-0 ml-0 md:ml-2 md:mt-0 mt-2">
                             <?php echo do_shortcode('[gtranslate]'); ?>
@@ -49,10 +49,33 @@
                             ?>
                         </div>
                         <ul class="flex space-x-3 -mt-8 md:-mt-0 absolute md:relative right-4 md:right-0">
-                            <li><a href="#!"><i class="fab fab fa-facebook-f"></i></a></li>
-                            <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#!"><i class="fab far fa-envelope"></i></a></li>
+                            <?php if(get_diveintowebworld_redux_data('facebook')) : ?>
+                            <li>
+                                <a href="<?php echo get_diveintowebworld_redux_data('facebook'); ?>">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <?php
+                                endif;
+
+                                if(get_diveintowebworld_redux_data('linked_in')) :
+                            ?>
+                            <li>
+                                <a href="<?php echo get_diveintowebworld_redux_data('linked_in'); ?>">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                            <?php
+                                endif;
+
+                                if(get_diveintowebworld_redux_data('twitter')) :
+                            ?>
+                            <li>
+                                <a href="<?php echo get_diveintowebworld_redux_data('twitter'); ?>">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>
@@ -76,12 +99,12 @@
                         <?php
                             wp_nav_menu(array(
                                 'theme-location'    =>  'primary_menu',
-                                'menu_class'        =>  'absolute lg:relative top-16 left-0 lg:top-0 z-20 md:flex flex-col lg:flex-row lg:space-x-4 font-thin w-full lg:w-auto bg-white shadow-md md:rounded-none md:shadow-none lg:bg-transparent pt-0 md:p-0 mr-4 px-2 md:px-4 lg:px-0 pb-3 lg:pb-0',
+                                'menu_class'        =>  '',
                                 'menu_id'           =>  'primary_menu',
-                                'container'         =>  'ul'
+                                'container'         =>  '',
+                                'items_wrap'        =>  '<ul id="primary_menu" class="absolute lg:relative top-16 left-0 lg:top-0 z-20 md:flex flex-col lg:flex-row lg:space-x-4 font-thin w-full lg:w-auto bg-white shadow-md md:rounded-none md:shadow-none lg:bg-transparent pt-0 md:p-0 mr-4 px-2 md:px-4 lg:px-0 pb-3 lg:pb-0" style="visibility: hidden;">%3$s</ul>'
                             ));
                         ?>
-
                         <div class="flex border-l border-gray-300 pl-4">
                             <button><i class="far fa-user-circle self-center"></i></button>
                         </div>

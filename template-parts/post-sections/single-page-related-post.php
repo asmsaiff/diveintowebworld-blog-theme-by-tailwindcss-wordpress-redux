@@ -37,7 +37,7 @@
                 </div>
             </div>
 
-            <h4 class="py-1 leading-5"><?php the_title(); ?></h4>
+            <h2 class="py-1 leading-5"><?php the_title(); ?></h2>
 
             <p class="text-sm block xl:hidden">
                 <?php echo get_the_excerpt(); ?>

@@ -2,7 +2,6 @@
     require_once( get_theme_file_path( '/inc/diveintowebworld-plugins.php' ) );
 
     // Option Panel
-    require_once( get_theme_file_path( '/lib/redux-framework/redux-framework.php' ) );
     require_once( get_theme_file_path( '/inc/options-panel/redux-config.php' ) );
     
     if ( site_url() == "http://localhost/diww/" ) {
@@ -119,10 +118,42 @@
     }
     add_filter('nav_menu_css_class', 'diveintowebworld_menu_classes', 1, 3);
 
-    function get_diveintowebworld_redux_data($key, $default = 'Default Text') {
+    function get_diveintowebworld_redux_data($key, $default = '') {
         if(class_exists('Redux')) {
             return Redux::get_option('diveintowebworld_options_data', $key, $default);
         } else {
             return $default;
         }
     }
+
+	// Add Class to All Heading in Single Page
+	function add_single_page_heading_class() {
+		if(is_single()) {
+?>
+	<script>
+		const single_page_heading3 = document.querySelectorAll('h3')
+		const single_page_heading4 = document.querySelectorAll('h4')
+// 		const single_page_list 	   = document.querySelectorAll('ul')
+		
+		single_page_heading3.forEach((val, key) => {
+			val.classList = 'text-xl my-6 font-semibold'
+		})
+		
+		single_page_heading4.forEach((val, key) => {
+			val.classList = 'text-lg my-6 font-semibold'
+		})
+		
+// 		single_page_list.forEach((val, key) => {
+// 			val.classList = 'list-disc list-inside mb-6'
+// 		})
+		
+		  document.addEventListener('DOMContentLoaded', (event) => {
+		  document.querySelectorAll('pre .codeDiv').forEach((el) => {
+			hljs.highlightElement(el);
+		  });
+		});
+	</script>
+<?php
+		}
+	}
+	add_filter('wp_footer', 'add_single_page_heading_class');

@@ -1,6 +1,6 @@
 <?php
     $wordpress_error_fix  = new WP_Query(array(
-        'posts_per_page'    =>  3,
+        'posts_per_page'    =>  4,
         'tax_query' => array(
             'relation' => 'AND',
             array(
@@ -33,7 +33,7 @@
             <div class="flex flex-col sm:flex-row sm:space-x-6 border-b sm:border-none pb-4 sm:pb-0">
                 <?php
                     if(has_post_thumbnail()) {
-                        the_post_thumbnail( 'large', array('class'=>'rounded-lg w-full pb-3 sm:pb-0 sm:w-36 md:w-56 h-auto self-center'));
+                        the_post_thumbnail( 'large', array('class'=>'rounded-lg w-full pb-3 sm:pb-0 sm:w-36 md:w-48 h-auto self-center'));
                     }
                 ?>
                 
@@ -69,7 +69,7 @@
 
     <?php
         $diveintowebworld_dev_roadmap = new WP_Query(array(
-            'category_name'         => 'Guidelines & Roadmaps',
+            'category_name'         => 'Programming',
             'posts_per_page'        =>  5
         ));
 
@@ -97,13 +97,13 @@
     ?>
     <div>
         <h2 class="section-title text-2xl font-semibold pb-1">
-            <?php _e('Development Roadmap', 'diveintowebworld'); ?>
+            <?php _e('Programming', 'diveintowebworld'); ?>
         </h2>
         <hr>
         <div class="mt-4 mb-8">
             <div class="flex flex-col sm:flex-row sm:space-x-6 border-b sm:border-none pb-4 sm:pb-0">
                 <a href="<?php echo esc_url($roadmap_post_data[0]['permalink']); ?>">
-                    <img src="<?php echo esc_url($roadmap_post_data[0]['thumbnail']); ?>" alt="" class="rounded-lg w-96 h-auto self-center mb-4 sm:mb-0">
+                    <img src="<?php echo esc_url($roadmap_post_data[0]['thumbnail']); ?>" alt="" class="rounded-lg h-auto self-center mb-4 sm:mb-0">
                 </a>
                 <div>
                     <div class="flex space-x-4">
